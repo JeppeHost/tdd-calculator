@@ -21,12 +21,12 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Adding two numbers")
+    @DisplayName("Adding numbers")
     void testAdd(){
         //Arrange
-        int number1 = 3;
-        int number2 = 5;
-        int expected = 8;
+        int number1 = 5;
+        int number2 = 10;
+        int expected = 15;
 
         //Act
         int result = instance.add(number1, number2);
@@ -36,7 +36,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Subtracting two numbers")
+    @DisplayName("Subtracting numbers")
     void testSubtract(){
         //Arrange
 
@@ -51,7 +51,7 @@ class CalculatorTest {
         assertEquals(expected, result);
     }
     @Test
-    @DisplayName("Multiplying two numbers")
+    @DisplayName("Multiplying numbers")
     void testMultiply(){
         //Arrange
         int number1 = 10;
@@ -67,7 +67,7 @@ class CalculatorTest {
         assertEquals(expected, result);
     }
     @Test
-    @DisplayName("Dividing two numbers")
+    @DisplayName("Dividing numbers")
     void testDivide(){
         //Arrange
         int number1 = 100;
@@ -81,9 +81,37 @@ class CalculatorTest {
 
         assertEquals(expected, result);
 
+    }
+    @Test
+    @DisplayName("Returning sum of numbers in a string")
+    void testAddStrings(){
 
+        //Arrange
+        String numbers = "1,2,3";
+        int expected = 6;
+
+        //Act
+        int result = instance.add(numbers);
+
+        //Assert
+
+        assertEquals(expected, result);
 
     }
+    @Test
+    @DisplayName("Returning sum of integer array")
+    void testAddArray(){
 
+        //Arrange
+        int [] numbers = {1,2,3,4,5};
+        int expected = 15;
 
+        //Act
+        int result = instance.add(numbers);
+
+        //Assert
+
+        assertEquals(expected, result);
+
+    }
 }
